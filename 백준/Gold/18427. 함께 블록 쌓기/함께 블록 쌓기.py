@@ -7,10 +7,11 @@ result = [0] * (H + 1)
 
 for student in students:
     for h in range(H, 0, -1):
-        for box in student:
-            answer = h + box
-            if answer <= H:
-                result[answer] += result[h]
+        if result[h]:
+            for box in student:
+                answer = h + box
+                if answer <= H:
+                    result[answer] += result[h]
 
     for box in student:
         result[box] += 1
