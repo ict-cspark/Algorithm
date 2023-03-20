@@ -15,7 +15,6 @@ def BFS(r, c):
             if 0 <= nr < N and 0 <= nc < N and board[nr][nc] == -1:
                 queue.append((nr, nc))
                 board[nr][nc] = board[r][c] + 1
-    return
 
 N, M = map(int, input().split())
 board = [[-1] * N for _ in range(N)]
