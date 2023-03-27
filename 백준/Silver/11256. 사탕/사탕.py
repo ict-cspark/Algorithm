@@ -1,17 +1,20 @@
-import sys
-input = sys.stdin.readline
+T = int(input())
 
-for _ in range(int(input())):
+for _ in range(T):
     J, N = map(int, input().split())
-    cases = []
-    for i in range(N):
+    boxes = []
+    for _ in range(N):
         R, C = map(int, input().split())
-        cases.append(R*C)
-    cases.sort(reverse=True)
-    cnt = 0
-    for case in cases:
-        J -= case
-        cnt += 1
-        if J <= 0:
-            print(cnt)
+        boxes.append(R * C)
+
+    boxes.sort(reverse=True)
+
+    result = 0
+    temp = 0
+    for box in boxes:
+        temp += box
+        result += 1
+        if temp >= J:
             break
+
+    print(result)
