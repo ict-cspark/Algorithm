@@ -7,6 +7,6 @@ def solution(n):
                 answer.append(i)
                 n = n // i
                 break
-             
+                
     answer = sorted(list(set(answer)))
     return answer
