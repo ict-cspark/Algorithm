@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 input = sys.stdin.readline
 
 N, M, R = map(int, input().split())
@@ -18,9 +19,9 @@ T[R] = 1
 visited[R] = 1
 
 flag = 1
-queue = [R]
+queue = deque([R])
 while queue:
-    r = queue.pop(0)
+    r = queue.popleft()
     for g in graph[r]:
         if visited[g] == 0:
             visited[g] = 1
