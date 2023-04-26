@@ -3,11 +3,13 @@ input = sys.stdin.readline
 
 N, M = map(int, input().split())
 
-guide = [""] + [input().strip() for _ in range(N)]
+guide = dict()
+
+for i in range(1, N + 1):
+    pokemon = input().strip()
+    guide[pokemon] = i
+    guide[str(i)] = pokemon
 
 for _ in range(M):
     search = input().strip()
-    if search.isdecimal():
-        print(guide[int(search)])
-    else:
-        print(guide.index(search))
+    print(guide[search]) 
