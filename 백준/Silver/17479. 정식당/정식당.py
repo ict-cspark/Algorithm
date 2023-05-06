@@ -5,7 +5,7 @@ A, B, C = map(int, input().split())
 
 mainMenu = dict()
 specialMenu = dict()
-serviceMenu = dict()
+serviceMenu = []
 
 for _ in range(A):
     menu, price = map(str, input().split())
@@ -17,7 +17,7 @@ for _ in range(B):
 
 for _ in range(C):
     menu = input().strip()
-    serviceMenu[menu] = 0
+    serviceMenu.append(menu)
 
 mainTotal = 0
 specialTotal = 0
