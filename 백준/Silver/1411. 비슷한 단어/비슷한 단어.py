@@ -10,24 +10,25 @@ for _ in range(N):
 
     idx = 1
     for i in range(len(word)):
-        alph = word[i]
+        s = word[i]
 
-        if alph.isdecimal():
+        if s.isdigit():
             continue
         else:
             for j in range(i, len(word)):
-                if word[j] == alph:
+                if word[j] == s:
                     word[j] = str(idx)
-            idx += 1
+        idx += 1
 
-    result = "".join(word)
-    if result in words:
-        words[result] += 1
+    answer = "".join(word)
+
+    if answer in words:
+        words[answer] += 1
     else:
-        words[result] = 1
+        words[answer] = 1
 
-answer = 0
+result = 0
 for value in words.values():
-    answer += len(list(combinations(range(value), 2)))
+    result += len(list(combinations(range(value), 2)))
 
-print(answer)
+print(result)
