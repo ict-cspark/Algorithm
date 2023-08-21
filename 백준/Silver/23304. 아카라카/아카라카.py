@@ -12,7 +12,6 @@ def DFS(s):
             DFS(s[:N])
             DFS(s[-N:])
 
-
 S = input()
 
 result = "IPSELENTI"
