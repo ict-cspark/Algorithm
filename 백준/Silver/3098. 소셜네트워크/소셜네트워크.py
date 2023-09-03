@@ -36,7 +36,6 @@ while True:
 
     cnt += 1
     friends.append(len(friend))
-
 print(cnt)
-for f in friends:
-    print(f)
+for i in friends:
+    print(i)
